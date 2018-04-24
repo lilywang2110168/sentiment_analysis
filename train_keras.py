@@ -26,6 +26,7 @@ embedding_vecor_length = 300
 # this is the output length?? hmmm
 model = Sequential()
 model.add(Embedding(top_words, embedding_vecor_length, input_length=max_review_length))
+model.add(SpatialDropout1D(0.4))
 ## urns positive integers (indexes) into dense vectors of fixed size. eg. [[4], [20]] -> [[0.25, 0.1], [0.6, -0.2]]
 # How come CNN can still be used???????? ugh...why...
 ## try a pretrained model too???
