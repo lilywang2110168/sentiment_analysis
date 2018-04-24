@@ -1,5 +1,6 @@
 # LSTM for sequence classification in the IMDB dataset
 import numpy
+from time import time
 from keras.datasets import imdb
 from keras.models import Sequential
 from keras.layers import Dense
@@ -7,6 +8,7 @@ from keras.layers import LSTM, Convolution1D, Flatten, Dropout,SpatialDropout1D
 from keras.layers.embeddings import Embedding
 from keras.preprocessing import sequence
 from keras.callbacks import TensorBoard
+
 
 # Using keras to load the dataset with the top_words
 top_words = 10000
