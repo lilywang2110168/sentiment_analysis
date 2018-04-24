@@ -13,7 +13,7 @@ top_words = 10000
 (X_train, y_train), (X_test, y_test) = imdb.load_data(num_words=top_words, skip_top=10)
 
 # Pad the sequence to the same length...preceding zeros
-max_review_length = 1600
+max_review_length = 200
 
 # each review has been preoprocessed and uses frequency as the number.
 X_train = sequence.pad_sequences(X_train, maxlen=max_review_length)
