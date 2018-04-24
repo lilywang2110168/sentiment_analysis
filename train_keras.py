@@ -3,7 +3,7 @@ import numpy
 from keras.datasets import imdb
 from keras.models import Sequential
 from keras.layers import Dense
-from keras.layers import LSTM, Convolution1D, Flatten, Dropout
+from keras.layers import LSTM, Convolution1D, Flatten, Dropout,SpatialDropout1D
 from keras.layers.embeddings import Embedding
 from keras.preprocessing import sequence
 from keras.callbacks import TensorBoard
@@ -52,7 +52,7 @@ model.add(Dense(1,activation='sigmoid'))
 
 
 # Log to tensorboard
-tensorBoardCallback = TensorBoard(log_dir='./logs', write_graph=True)
+tensorBoardCallback = TensorBoard(log_dir="logs/{}".format(time()), write_graph=True)
 model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
 print(model.summary())
 
