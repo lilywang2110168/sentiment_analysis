@@ -53,6 +53,7 @@ model.add(Dense(1,activation='sigmoid'))
 # Log to tensorboard
 tensorBoardCallback = TensorBoard(log_dir='./logs', write_graph=True)
 model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
+print(model.summary())
 
 model.fit(X_train, y_train, epochs=1, callbacks=[tensorBoardCallback], batch_size=64)
 
